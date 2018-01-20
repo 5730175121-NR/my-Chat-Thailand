@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import { ChatFormComponent } from './chatroom/chat-form/chat-form.component';
@@ -13,6 +17,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UserListComponent } from './chatroom/user-list/user-list.component';
 import { UserItemComponent } from './chatroom/user-list/user-item/user-item.component';
 
+import { ChatService } from './services/chat/chat.service';
+import { AuthService } from './services/auth/auth.service';
+
+import { appRoutes } from '../routes';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,9 +37,15 @@ import { UserItemComponent } from './chatroom/user-list/user-item/user-item.comp
     UserItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    AngularFireModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [AuthService, ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
