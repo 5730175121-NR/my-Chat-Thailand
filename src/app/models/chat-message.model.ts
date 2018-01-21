@@ -4,4 +4,5 @@ export class ChatMessage {
     userName?: string;
     message?: string;
     timeSent?: Date = new Date();
+    profilePicture?: string;
 }

@@ -14,6 +14,7 @@ export class UserItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

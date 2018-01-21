@@ -21,7 +21,9 @@ import { ChatService } from './services/chat/chat.service';
 import { AuthService } from './services/auth/auth.service';
 
 import { appRoutes } from '../routes';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
+import { FreindListComponent } from './chatroom/freind-list/freind-list.component';
+import { FreindItemComponent } from './chatroom/freind-list/freind-item/freind-item.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { environment } from '../environments/environment';
     SignupFormComponent,
     NavbarComponent,
     UserListComponent,
-    UserItemComponent
+    UserItemComponent,
+    FreindListComponent,
+    FreindItemComponent
   ],
   imports: [
     BrowserModule,

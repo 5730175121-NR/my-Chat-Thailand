@@ -5,11 +5,13 @@
         [(ngModel)]="email"
         type="email" 
         name="email" 
-        class="formInput" />
+        class="formInput" 
+        (keydown.enter)="login()"/>
       <input type="password" 
         [(ngModel)]="password"
         name="password" 
-        class="formInput" />
+        class="formInput"
+        (keydown.enter)="login()"/>
       <button class="btn" 
               id="btn-login" 
               (click)="login()">

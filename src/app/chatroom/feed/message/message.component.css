@@ -1,31 +1,31 @@
-.messageContainer {
+/* .messageContainer{
     display: flex;
     height: auto;
-    width: 70%;
+    width: 60%;
     min-width: 400px;
     border-radius: 5px;
     align-items:stretch;
-    background-color: #eee;
+    background-color: rgb(231, 229, 229);
     box-shadow: 0 3px 6px rgba(0,0,0,0.26), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.isOwnMessageContainer {
-    background-color: #01579B;
+.isOwnMessageContainer{
+    background-color: #EF132C;
 }
 
-.messageData {
+.messageData{
     flex: 1;
     padding: 10px;
     font-size: 0.7em;
 }
 
-.sender {
+.sender{
     display: block;
     color: #222;
     font-weight: bold;
 }
 
-.isOwnSender {
+.isOwnSender{
     color: #E1F5FE;
 }
 
@@ -34,20 +34,48 @@
     font-style: italic;
 }
 
-.isOwnTimestamp {
-    color: #4FC3F7;
+.isOwnTimestamp{
+    color: #eee;
 }
 
-.messageContent {
+.messageContent{
     height: auto;
     flex: 9;
     background-color: #fff;
     padding: 10px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+} */
+
+.messageContainer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+   margin-bottom: 10px;
 }
 
-.isOwnMessageContent {
-    background-color: #E3F2FD;
-    color: #01579B;
+.messageContainer .user-profile-pic {
+    width: 60px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.messageContainer .user-profile-pic img{
+    width: 100%;
+}
+
+.messageContainer .message {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 10px 0;
+    background: #fff;
+    border-radius: 10px;
+    color: black;
+    font-size: 16px;
+}
+
+.isOwnMessageContainer .message {
+    order: -1;
 }

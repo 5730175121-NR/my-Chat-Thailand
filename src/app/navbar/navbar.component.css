@@ -5,6 +5,12 @@
     background-color: #EAEAEB;
 }
 
+/* .logo-container {
+    width: 20%;
+    flex-direction: row;
+    background-color: #EAEAEB;
+} */
+
 #logo{
     display: inline-block;
     background: url('../../assets/img/logo.png') no-repeat;

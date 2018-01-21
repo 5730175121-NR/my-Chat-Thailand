@@ -25,14 +25,15 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-      .then((resolve) => {
-        const status = 'online';
+      .then((user) => {
+        this.authState = user;
         this.router.navigate(['chat']);
-        this.setUserStatus(status);
+        this.setUserStatus('online');
       });
   }
 
   logout() {
+    this.setUserStatus('offline');
     this.afAuth.auth.signOut();
     this.router.navigate(['login']);
   }
@@ -41,7 +42,7 @@ export class AuthService {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
         this.authState = user;
-        const status = 'online';
+        const status = 'offline';
         this.setUserData(email, displayName, status);
       }).catch(error => console.log(error));
   }
@@ -51,6 +52,7 @@ export class AuthService {
     const data = {
       email: email,
       displayName: displayName,
+      profilePicture: '',
       status: status
     }
 
@@ -59,6 +61,7 @@ export class AuthService {
   }
 
   setUserStatus(status: string): void {
+    console.log('set status : ' + status);
     const path = `users/${this.currentUserId}`;
     const data = {
       status : status

@@ -13,9 +13,9 @@ export class LoginFormComponent implements OnInit{
   errorMsg: string;
 
   constructor(private authService: AuthService, private router: Router) { 
-    this.authService.authUser().subscribe(auth => {
-      if(auth !== undefined && auth !== null) this.router.navigate(['chat']);
-    });
+    // this.authService.authUser().subscribe(auth => {
+    //   if(auth !== undefined && auth !== null) this.router.navigate(['chat']);
+    // }); 
   }
 
   ngOnInit() {

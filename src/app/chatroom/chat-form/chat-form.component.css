@@ -5,13 +5,25 @@
     background-color: #eee;
     color: #000;
     transition: 0.1s ease-out;
-    padding-left: 80px;
+    padding: 10px 20px;
+    resize: none;
 }
 
 .chatInput:focus {
     background-color: #E4F1FE;
     color: #222;
     transition: 0.2s ease-in;
+}
+
+.chatInput ::-webkit-scrollbar
+{
+	border-radius: 10px;
+}
+
+.chatInput ::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	background-color: #F5F5F5;
 }
 
 .chatButton {

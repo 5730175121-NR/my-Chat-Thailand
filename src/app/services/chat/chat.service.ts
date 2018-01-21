@@ -13,6 +13,7 @@ export class ChatService {
   chatMessages: AngularFireList<any>;
   chatMessage: ChatMessage;
   userName: Observable<string>;
+  profilePicture: Observable<string>;
 
   constructor(
     private db: AngularFireDatabase,
@@ -25,11 +26,13 @@ export class ChatService {
       
       this.getUser().subscribe(a => {
         this.userName = a['displayName'];
+        this.profilePicture = a['profilePicture'];
       });
     });
   }
 
   sendMessage(msg: string) {
+    console.log(this.user);
     const timestamp = this.getTimeStamp();
     const email = this.user.email;
     this.chatMessages = this.getMessages();
@@ -37,7 +40,8 @@ export class ChatService {
       email: email,
       userName: this.userName,
       message: msg,
-      timeSent: timestamp
+      timeSent: timestamp,
+      profilePicture: this.profilePicture 
     });
   }
 
@@ -49,6 +53,7 @@ export class ChatService {
 
   getUsers() {
     const path = '/users';
+    // return this.db.list(path, ref => ref.orderByChild('status').equalTo('online')).valueChanges();
     return this.db.list(path).valueChanges();
   }
 

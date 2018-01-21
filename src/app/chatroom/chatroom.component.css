@@ -3,40 +3,58 @@
 }
 
 .userListWrapper {
-    background-color: #2A2845;
+    background-color: #EF132C;
     color: #fff;
     display: flex;
     font-family: "Open Sans", sans-serif;
     font-size: 1.2em;
-    flex: 1;
+    flex: 2;
     order: 1;
     padding:20px 0px 40px 30px;
     border-right: 1px solid #222;
 }
 
+.chatBoxWrapper {
+    flex: 3;
+    order: 2;
+}
+
 .feedWrapper {
-    background-color: #fff;
-    background: 
-        linear-gradient(181deg, rgba(100,200,255,0.6), rgba(0, 0, 0, 0.9)),
-        url('../../assets/img/chat-bg-1.jpg') center center no-repeat;;
+    background-color: #F24256;
     font-family: "Open Sans", sans-serif;
     font-size: 1.2em;
-    flex: 5;
-    order: 2;
     overflow-y: scroll;
-    padding:20px 0px 0px 24px;
+    padding:20px 0px 0px 20px;
+    height: 85%;
+}
+
+.friendListWrapper {
+    background-color: #EF132C;
+    color: #fff;
+    display: flex;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2em;
+    flex: 2;
+    order: 3;
+    padding:20px 0px 40px 30px;
+    border-right: 1px solid #222;
 }
 
 .chatFormWrapper {
     display: flex;
-    height: 50px;
+    height: 15%;
     background-color: #eee;
     z-index: 3;
 }
 
-#scroll-style::-webkit-scrollbar-track
+#scroll ::-webkit-scrollbar
 {
 	border-radius: 10px;
+}
+
+#scroll ::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
 	background-color: #F5F5F5;
 }
 
