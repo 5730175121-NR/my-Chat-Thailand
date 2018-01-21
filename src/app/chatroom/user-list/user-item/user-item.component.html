@@ -1,5 +1,5 @@
 <div class="userItem">
-  <div class="user-item-profile-pic"></div>
+  <div class="user-item-profile-pic"><img src="{{ user['profilePicture'] }}"></div>
   <div class="status" [ngClass]=(user.status)></div>
   <div class="userName"> {{ user['displayName'] }} </div>
 </div>

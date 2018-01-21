@@ -10,7 +10,7 @@
 }
 
 .chatInput:focus {
-    background-color: #E4F1FE;
+    background-color: #CDFFFF;
     color: #222;
     transition: 0.2s ease-in;
 }
@@ -35,6 +35,13 @@
     color: white;
     transition: 0.2s ease-out;
     min-width: 50px;
+}
+
+.chatButton img{
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    vertical-align: middle;
 }
 
 .chatButton:hover {
