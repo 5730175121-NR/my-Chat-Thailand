@@ -51,9 +51,15 @@
     width: 100%;
   }
 
-  .radio {
-      height: 40px;
-      display: inline-block;
+  .form-check {
+    height: 40px;
+    margin-left: 30px;
+    display: inline-block;
+  }
+
+  .form-control {
+    margin-left: 30px;
+    width: 50%;
   }
 
   #btn-signUp{

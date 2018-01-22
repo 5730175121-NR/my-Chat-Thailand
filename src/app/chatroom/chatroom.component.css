@@ -3,51 +3,80 @@
 }
 
 .userListWrapper {
-    background-color: #EF132C;
+    background-color: #ff0033;
     color: #fff;
     display: flex;
     font-family: "Open Sans", sans-serif;
     font-size: 1.2em;
-    flex: 2;
+    flex: 1;
     order: 1;
-    padding:10px 20px 10px 20px;
+    padding:40px 50px 10px 50px;
 }
 
 .chatBoxWrapper {
-    flex: 3;
+    flex: 1.5;
     order: 2;
+    padding:40px 50px 10px 50px;
+}
+
+.nameTag {
+    height: 10%;
+    background-color: #400D12;
+    /* border: 1px solid black; */
+    border-radius: 2px;
+    /* border: 1px solid #400D12; */
+    /* box-shadow: 0 5px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-bottom: 30px; */
+}
+
+.chatBoxContainer {
+    height: 80%;
+    background-color: whitesmoke;
+    /* border: 1px solid black; */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    /* border: 1px solid #400D12; */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-bottom: 30px;
+    overflow: hidden;
 }
 
 .feedWrapper {
-    background-color: #F24256;
+    /* background-color: #F24256; */
     font-family: "Open Sans", sans-serif;
     font-size: 1.2em;
     overflow-y: scroll;
     padding:20px 10px 0px 10px;
     height: 85%;
+    /* box-shadow: 0 5px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
 }
 
 .friendListWrapper {
-    background-color: #EF132C;
+    background-color: #EAEAEB;
     color: #fff;
     display: flex;
     font-family: "Open Sans", sans-serif;
     font-size: 1.2em;
     flex: 2;
     order: 3;
-    padding:10px 20px 10px 20px;
+    padding:40px 50px 10px 50px;
 }
 
 .chatFormWrapper {
     display: flex;
     height: 15%;
     background-color: #eee;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     z-index: 3;
 }
 
-#scroll-style::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: #F5F5F5;
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .1);
 }
 
 app-user-list {

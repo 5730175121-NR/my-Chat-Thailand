@@ -62,25 +62,26 @@ export class AuthService {
     
   }
 
-  signUp(email: string, password: string, displayName: string) {
+  signUp(email: string, password: string, displayName: string, gender: string, age: number) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
         this.authState = user;
-        const status = 'offline';
-        this.setUserData(email, displayName, status)
+        this.setUserData(email, displayName, 'online', gender, age)
           .then((success) => {
             this.router.navigate(['chat']);
           });
       }).catch(error => console.log(error));
   }
 
-  setUserData(email: string, displayName: string, status: string) {
+  setUserData(email: string, displayName: string, status: string, gender: string, age: number) {
     const path = `users/${this.currentUserId}`;
     const data = {
       email: email,
       displayName: displayName,
       profilePicture: '',
-      status: status
+      status: status,
+      gender: gender,
+      age: age
     }
     return this.db.object(path).update(data);
   }
