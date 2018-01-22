@@ -8,13 +8,13 @@
     display: flex;
     font-family: "Open Sans", sans-serif;
     font-size: 1.2em;
-    flex: 1;
+    flex: 1.5;
     order: 1;
     padding:40px 50px 10px 50px;
 }
 
 .chatBoxWrapper {
-    flex: 1.5;
+    flex: 2;
     order: 2;
     padding:40px 50px 10px 50px;
 }
