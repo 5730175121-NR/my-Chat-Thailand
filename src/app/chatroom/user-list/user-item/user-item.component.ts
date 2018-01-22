@@ -17,14 +17,14 @@ export class UserItemComponent implements OnInit {
 
   }
 
-  onClick() {
-    document.getElementById('modalbtn').click();
-  }
+  // onClick() {
+  //   document.getElementById('modalbtn').click();
+  // }
 
-  add() {
-    this.chat.createChatroom(this.user.uid);
-    document.getElementById('modalbtn').click();
-    console.log(this.user);
-  }
+  // add() {
+  //   this.chat.createChatroom(this.user.uid);
+  //   document.getElementById('modalbtn').click();
+  //   console.log(this.user);
+  // }
 
 }

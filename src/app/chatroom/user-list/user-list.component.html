@@ -1,9 +1,24 @@
 <div class="userList-filter">
-    <button type="button" class="btn btn-primary" (click)="offline()">offline</button>
+    <button type="button" class="btn btn-primary">offline</button>
 </div>
 
 <div class="userList">
   <app-user-item
-    [user]=user *ngFor="let user of users">
+    [user]=user *ngFor="let user of users" (click)="show(user)">
   </app-user-item>
+</div>
+
+<button id="modalbtn" type="button" class="btn hidden-btn" data-toggle="modal" data-target="#myModal">Open Modal</button>
+      
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="img-container">
+          <img src="{{ selectedUser['profilePicture'] }}">
+          <div class="modal-add">
+            <button class="btn btn-danger" (click)="add()">Add</button>
+          </div>
+      </div>
+    </div>
+  </div>
 </div>

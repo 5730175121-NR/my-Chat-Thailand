@@ -11,6 +11,8 @@ import { AuthService } from '../../services/auth/auth.service';
 export class UserListComponent implements OnInit {
   users: User[];
 
+  selectedUser: User;
+
   ngOnInit() {
   }
 
@@ -20,7 +22,14 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  offline() {
-    this.authService.setUserStatus('offline');
+  show(user: User) {
+    this.selectedUser = user;
+    document.getElementById('modalbtn').click();
+  }
+
+  add() {
+    this.chat.createChatroom(this.selectedUser.uid);
+    document.getElementById('modalbtn').click();
+    console.log(this.selectedUser);
   }
 }

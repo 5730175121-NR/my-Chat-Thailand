@@ -17,3 +17,31 @@
     box-shadow: 0 5px 10px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     padding: 10px 15px 0 15px;
 }
+
+.hidden-btn {
+    display: none;
+}
+
+.modal-content {
+    height: 720px;
+    width: auto;
+    padding: 20px 0 10px 0;
+}
+
+.img-container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+}
+
+.modal-add {
+    margin-top: 20px;
+    padding: 0px 100px 0px 100px;
+    height: 60px;
+}
+
+.modal-add .btn{
+    width: 100%;
+    font-size: 1.2em;
+}
