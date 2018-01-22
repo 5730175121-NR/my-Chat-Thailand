@@ -1,5 +1,6 @@
 .userList-filter {
     height: 5%;
+    width: 350px;
     background-color: whitesmoke;
     border-radius: 8px;
     /* border: 1px solid #400D12; */
@@ -9,6 +10,7 @@
 
 .userList {
     height: 90%;
+    width: 350px;
     background: whitesmoke;
     border-radius: 8px;
     /* border: 1px solid #400D12; */

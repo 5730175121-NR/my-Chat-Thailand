@@ -1,3 +1,11 @@
+.chatroom-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 .mainContent{
     display: flex;
 }
@@ -8,19 +16,20 @@
     display: flex;
     font-family: "Open Sans", sans-serif;
     font-size: 1.2em;
-    flex: 1.5;
+    /* flex: 1.5; */
     order: 1;
     padding:40px 50px 10px 50px;
 }
 
 .chatBoxWrapper {
-    flex: 2;
+    /* flex: 2; */
     order: 2;
     padding:40px 50px 10px 50px;
 }
 
 .nameTag {
     height: 10%;
+    width: 400px;
     background-color: #400D12;
     /* border: 1px solid black; */
     border-radius: 2px;
@@ -31,6 +40,7 @@
 
 .chatBoxContainer {
     height: 80%;
+    width: 400px;
     background-color: whitesmoke;
     /* border: 1px solid black; */
     border-bottom-left-radius: 8px;
@@ -57,7 +67,7 @@
     display: flex;
     font-family: "Open Sans", sans-serif;
     font-size: 1.2em;
-    flex: 2;
+    /* flex: 2; */
     order: 3;
     padding:40px 50px 10px 50px;
 }

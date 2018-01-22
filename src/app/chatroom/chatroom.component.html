@@ -1,23 +1,26 @@
-<div class="mainContent">
-  <div class="userListWrapper">
-    <app-user-list></app-user-list>
-  </div>
-  <div class="chatBoxWrapper">
-    <div class="nameTag">
-        Red Chat แชทสนุกไปกับ Red Chat
-    </div>   
-    <div class="chatBoxContainer">
-      <div #scroller class="feedWrapper">
-        <app-feed></app-feed>
+<div class="chatroom-container">
+  <div class="mainContent">
+      <div class="userListWrapper">
+        <app-user-list></app-user-list>
       </div>
-      <div class="chatFormWrapper">
-        <app-chat-form></app-chat-form>
+      <div class="chatBoxWrapper">
+        <div class="nameTag">
+            Red Chat แชทสนุกไปกับ Red Chat
+        </div>   
+        <div class="chatBoxContainer">
+          <div #scroller class="feedWrapper">
+            <app-feed></app-feed>
+          </div>
+          <div class="chatFormWrapper">
+            <app-chat-form></app-chat-form>
+          </div>
+        </div>
+      </div>
+      <div class="friendListWrapper">
+        <app-friend-list></app-friend-list>
       </div>
     </div>
-  </div>
-  <div class="friendListWrapper">
-    <app-friend-list></app-friend-list>
-  </div>
 </div>
+
   
 
