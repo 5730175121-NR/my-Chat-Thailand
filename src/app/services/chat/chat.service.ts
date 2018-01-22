@@ -19,18 +19,32 @@ export class ChatService {
 
   constructor(
     private db: AngularFireDatabase,
-    private afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    private auth: AuthService
   ) { 
     this.afAuth.authState.subscribe(auth => {
       if(auth !== undefined && auth !== null) {
         this.user = auth;
       }
       
-      this.subUser = this.getUser().subscribe(a => {
+      this.getUser().subscribe(a => {
         this.userName = a['displayName'];
         this.profilePicture = a['profilePicture'];
       });
     });
+  }
+
+  createChatroom(uid: string) {
+    let key = this.db.list('chatroom').push({
+      you: uid,
+      me: this.auth.currentUserId,
+      messages: ''
+    }).key;
+    let roomInfo = {
+      key: key
+    }
+    this.db.list('user-chatroom/' + uid).push(roomInfo);
+    this.db.list('user-chatroom/' + this.auth.currentUserId).push(roomInfo);
   }
 
   sendMessage(msg: string) {
@@ -53,7 +67,7 @@ export class ChatService {
   }
 
   getUsers() {
-    const path = '/users';
+    const path = '/onlines';
     // return this.db.list(path, ref => ref.orderByChild('status').equalTo('online')).valueChanges();
     return this.db.list(path).valueChanges();
   }

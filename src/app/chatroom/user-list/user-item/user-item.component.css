@@ -47,3 +47,31 @@
 .userName{
     display: inline-block;
 }
+
+.hidden-btn {
+    visibility: hidden;
+}
+
+.modal-content {
+    height: 720px;
+    width: auto;
+    padding: 20px 0 10px 0;
+}
+
+.img-container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+}
+
+.modal-add {
+    margin-top: 20px;
+    padding: 0px 100px 0px 100px;
+    height: 60px;
+}
+
+.modal-add .btn{
+    width: 100%;
+    font-size: 1.2em;
+}

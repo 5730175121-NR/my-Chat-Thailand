@@ -11,10 +11,20 @@ export class UserItemComponent implements OnInit {
 
   @Input() user: User;
 
-  constructor() { }
+  constructor(private chat: ChatService) { }
 
   ngOnInit() {
 
+  }
+
+  onClick() {
+    document.getElementById('modalbtn').click();
+  }
+
+  add() {
+    this.chat.createChatroom(this.user.uid);
+    document.getElementById('modalbtn').click();
+    console.log(this.user);
   }
 
 }
