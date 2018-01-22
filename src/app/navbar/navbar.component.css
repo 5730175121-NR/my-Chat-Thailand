@@ -15,24 +15,24 @@
     display: inline-block;
     background: url('../../assets/img/logo.png') no-repeat;
     background-size: cover;
-    margin: 12px 10px 12px 32px;
-    width: 60px;
-    height: 60px;
-    min-width: 60px;
+    margin: 8px 10px 10px 32px;
+    width: 45px;
+    height: 45px;
+    /* min-width: 60px; */
 }
 
 #heading{
     flex: 4;
-    padding: 10px 0px 8px 10px;
-    height: 60px;
+    padding: 8px 0px 8px 10px;
+    /* height: 30px; */
     font-family: 'Patua One', cursive;
-    font-size: 3.2em;
+    font-size: 2.4em;
     font-weight: bold;
 }
 
 .links{
-    padding-top: 32px;
-    padding-right: 30px;
+    padding-top: 20px;
+    padding-right: 14px;
     white-space: nowrap;
     display: block;
 }

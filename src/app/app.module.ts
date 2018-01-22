@@ -22,8 +22,8 @@ import { AuthService } from './services/auth/auth.service';
 
 import { appRoutes } from '../routes';
 import { environment } from '../environments/environment.prod';
-import { FreindListComponent } from './chatroom/freind-list/freind-list.component';
-import { FreindItemComponent } from './chatroom/freind-list/freind-item/freind-item.component';
+import { FriendListComponent } from './chatroom/friend-list/friend-list.component';
+import { FriendItemComponent } from './chatroom/friend-list/friend-item/friend-item.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +37,8 @@ import { FreindItemComponent } from './chatroom/freind-list/freind-item/freind-i
     NavbarComponent,
     UserListComponent,
     UserItemComponent,
-    FreindListComponent,
-    FreindItemComponent
+    FriendListComponent,
+    FriendItemComponent
   ],
   imports: [
     BrowserModule,

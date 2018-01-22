@@ -1,28 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ChatService } from '../../services/chat/chat.service';
-import { send } from 'q';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-chat-form',
   templateUrl: './chat-form.component.html',
   styleUrls: ['./chat-form.component.css']
 })
-export class ChatFormComponent implements OnInit {
+export class ChatFormComponent implements OnInit, OnDestroy {
   message: string;
 
-  constructor(private chat: ChatService) { }
+  constructor(private chat: ChatService, private auth: AuthService) { }
 
   ngOnInit() {
+    this.auth.reAuth();
   }
 
   send() {
-    this.chat.sendMessage(this.message);
-    this.message = '';
+    if (this.message.replace(/\s/g, '').length !== 0) {
+      this.chat.sendMessage(this.message);
+      this.message = '';
+    } 
   }
 
   handleSubmit(event) {
     event.preventDefault();
     this.send();
+  }
+
+  ngOnDestroy() {
+    this.auth.logout();
   }
 
 }
