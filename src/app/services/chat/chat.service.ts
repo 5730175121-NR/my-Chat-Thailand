@@ -15,6 +15,8 @@ export class ChatService {
   userName: Observable<string>;
   profilePicture: Observable<string>;
 
+  subUser: any;
+
   constructor(
     private db: AngularFireDatabase,
     private afAuth: AngularFireAuth
@@ -24,7 +26,7 @@ export class ChatService {
         this.user = auth;
       }
       
-      this.getUser().subscribe(a => {
+      this.subUser = this.getUser().subscribe(a => {
         this.userName = a['displayName'];
         this.profilePicture = a['profilePicture'];
       });
@@ -32,7 +34,6 @@ export class ChatService {
   }
 
   sendMessage(msg: string) {
-    console.log(this.user);
     const timestamp = this.getTimeStamp();
     const email = this.user.email;
     this.chatMessages = this.getMessages();
@@ -58,7 +59,7 @@ export class ChatService {
   }
 
   getMessages(): AngularFireList<ChatMessage[]> {
-    return this.db.list('messages', ref => ref.limitToLast(10));
+    return this.db.list('messages', ref => ref.limitToLast(15));
   }
 
   getTimeStamp() {
@@ -67,5 +68,4 @@ export class ChatService {
     const time = now.getUTCHours() + ':' + now.getUTCMinutes() + ':' + now.getUTCSeconds();
     return (date + ' ' + time);
   }
-
 }

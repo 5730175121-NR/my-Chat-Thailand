@@ -10,9 +10,25 @@ import { User } from '../../models/user.model';
 export class AuthService {
   private user: Observable<firebase.User>;
   private authState: any;
+  private email: string;
 
   constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase, private router: Router) { 
     this.user = afAuth.authState;
+  }
+
+  get userEmail() {
+    return this.email;
+  }
+
+  reAuth() {
+    firebase.auth().onAuthStateChanged( (user) => {
+      if(user) {
+        this.authState = user;
+        this.email = user.email;
+      } else {
+        this.router.navigate(['login']);
+      }
+    });
   }
 
   authUser() {
@@ -27,15 +43,23 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((user) => {
         this.authState = user;
+        this.email = user.email;
         this.router.navigate(['chat']);
         this.setUserStatus('online');
       });
   }
 
   logout() {
-    this.setUserStatus('offline');
-    this.afAuth.auth.signOut();
-    this.router.navigate(['login']);
+    this.setUserStatus('offline')
+      .then((signOut) => {
+        this.afAuth.auth.signOut()
+          .then((user) => {
+            console.log('logout successful!!!')
+            this.router.navigate(['login']);
+          })
+          .catch(error => console.log(error));
+      });
+    
   }
 
   signUp(email: string, password: string, displayName: string) {
@@ -43,11 +67,14 @@ export class AuthService {
       .then((user) => {
         this.authState = user;
         const status = 'offline';
-        this.setUserData(email, displayName, status);
+        this.setUserData(email, displayName, status)
+          .then((success) => {
+            this.router.navigate(['chat']);
+          });
       }).catch(error => console.log(error));
   }
 
-  setUserData(email: string, displayName: string, status: string): void {
+  setUserData(email: string, displayName: string, status: string) {
     const path = `users/${this.currentUserId}`;
     const data = {
       email: email,
@@ -55,18 +82,18 @@ export class AuthService {
       profilePicture: '',
       status: status
     }
-
-    this.db.object(path).update(data)
-      .catch(error => console.log(error));
+    return this.db.object(path).update(data);
   }
 
-  setUserStatus(status: string): void {
-    console.log('set status : ' + status);
+  setOnlineUser() {
+    console.log('set user to online');
+  }
+
+  setUserStatus(status: string) {
     const path = `users/${this.currentUserId}`;
     const data = {
       status : status
     };
-    this.db.object(path).update(data)
-      .catch(error => console.log(error));
+    return this.db.object(path).update(data)
   }
 }

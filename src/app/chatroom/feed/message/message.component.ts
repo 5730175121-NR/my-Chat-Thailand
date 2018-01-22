@@ -9,9 +9,9 @@ import { ChatMessage } from '../../../models/chat-message.model';
   styleUrls: ['./message.component.css']
 })
 
-export class MessageComponent implements OnInit {
-
+export class MessageComponent implements OnInit{
   @Input() chatMessage: ChatMessage;
+
   userEmail: string;
   userName: string;
   messageContent: string;
@@ -20,12 +20,7 @@ export class MessageComponent implements OnInit {
   ownEmail: string;
   profilePicture: string;
 
-  constructor(private authService: AuthService) { 
-    authService.authUser().subscribe(user => {
-      this.ownEmail = user.email;
-      this.isOwnMessage = this.ownEmail === this.userEmail;
-    });
-  }
+  constructor(private auth: AuthService) {}
 
   ngOnInit(chatMessage = this.chatMessage) {
     this.messageContent = chatMessage.message;
@@ -33,6 +28,8 @@ export class MessageComponent implements OnInit {
     this.userEmail = chatMessage.email;
     this.userName = chatMessage.userName;
     this.profilePicture = chatMessage.profilePicture;
-  }
 
+    this.ownEmail = this.auth.userEmail;
+    this.isOwnMessage = this.ownEmail === this.userEmail;
+  }
 }

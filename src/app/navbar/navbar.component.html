@@ -4,16 +4,16 @@
   <div class="link-container">
     <div class="links">
         <span>
-          <a *ngIf="!(user|async)?.uid" href="#" (click)="login()">Login</a>
+          <a *ngIf="(user|async) === null" href="#" (click)="login()">Login</a>
         </span>
         <span>
-          <a *ngIf="!(user|async)?.uid" routerLink="/signup">Sign Up</a>
+          <a *ngIf="(user|async) === null" routerLink="/signup">Sign Up</a>
         </span>
         <span>
-          <span id="userEmail" *ngIf="(user|async)?.uid">Hello, {{userEmail}}</span>
+          <span id="userEmail" *ngIf="(user|async) !== null">Hello, {{userEmail}}</span>
         </span>
         <span>
-          <a *ngIf="(user|async)?.uid" href="#" (click)="logout()">Logout</a>
+          <a *ngIf="(user|async) !== null" (click)="logout()">Logout</a>
         </span>
       </div>
   </div>
