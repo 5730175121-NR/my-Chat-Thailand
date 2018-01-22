@@ -49,7 +49,7 @@
 }
 
 .hidden-btn {
-    visibility: hidden;
+    display: none;
 }
 
 .modal-content {
