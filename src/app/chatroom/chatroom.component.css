@@ -45,15 +45,9 @@
     z-index: 3;
 }
 
-#scroll ::-webkit-scrollbar
-{
-	border-radius: 10px;
-}
-
-#scroll ::-webkit-scrollbar-thumb
-{
-	border-radius: 5px;
-	background-color: #F5F5F5;
+#scroll-style::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #F5F5F5;
 }
 
 app-user-list {

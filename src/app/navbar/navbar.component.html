@@ -4,7 +4,7 @@
   <div class="link-container">
     <div class="links">
         <span>
-          <a *ngIf="(user|async) === null" href="#" (click)="login()">Login</a>
+          <a *ngIf="(user|async) === null" routerLink="/login">Login</a>
         </span>
         <span>
           <a *ngIf="(user|async) === null" routerLink="/signup">Sign Up</a>

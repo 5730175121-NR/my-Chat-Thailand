@@ -1,5 +1,10 @@
+* {
+    height: auto;
+}
+
 .signup-container{
     overflow:hidden;
+    height: 100%;
     background: 
       linear-gradient(45deg, rgba(0,103, 255, 0.3), rgba(0, 150, 80, 0.9)),
       url('../../assets/img/login-3.jpg') center center no-repeat;;
@@ -14,12 +19,12 @@
     height: 520px;
     margin: auto;
     margin-top: 30px;
-    padding: 80px 30px;
+    padding: 30px 30px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.17), 0 1px 2px rgba(0,0,0,0.24);
     overflow: hidden;
   }
-  
-  .formInput{
+
+ .formInput{
     display: block;
     width: 100%;
     height: 40px;
@@ -45,7 +50,12 @@
     transition: ease-in 0.2s;
     width: 100%;
   }
-  
+
+  .radio {
+      height: 40px;
+      display: inline-block;
+  }
+
   #btn-signUp{
       background-color:#2A2845;
   }
